@@ -15,7 +15,11 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-            if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
+            int exclamationP = markdown.indexOf("!", nextOpenBracket-1);
+            if(nextOpenBracket-exclamationP == 1 && exclamationP >= 0){
+                currentIndex = markdown.length();
+            }
+            else if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
                 currentIndex = markdown.length();
             }
             else{
