@@ -1,3 +1,3 @@
-![](image.png)
+![image](image.png)
 
 image reference
